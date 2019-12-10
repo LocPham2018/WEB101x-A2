@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Log In</title>
+    <style>
+      span {
+        display: inline-block;
+        width: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function toggleLogin() {
+        var usr = document.getElementById('usr').value;
+        var pass = document.getElementById('pass').value;
+        if (usr == null || usr == '') {
+          document.getElementById('alert').innerHTML = 'Missing Email!';
+        } else if (pass == null || pass == '') {
+          document.getElementById('alert').innerHTML = 'Missing Password!';
+        } else if (pass.length < 6) {
+          document.getElementById('alert').innerHTML = 'Password is too short, please input at least 6 characters!';
+        } else {
+	  document.getElementById('alert').innerHTML = '';
+	}
+      }
+
+    </script>
+    
+    <h1>Log In</h1>
+    <span>Username:</span> <input id="usr"><br /> 
+    <span>Password:</span> <input id="pass" type="password"><br />
+    <p id="alert" style="color:red;"></p>
+    <input type="button" onClick="toggleLogin()" value="Login">
+  </body>
+
+</html>
